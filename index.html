@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>rust-canvas-example</title>
+  </head>
+  <body style="font-family: monospace; margin: auto; max-width: 672px;">
+    <h1>rust-canvas-example</h1>
+    <ul>
+      <li><a href="?Rust">Rust + CanvasRenderingContext2D</a></li>
+      <li><a href="?JavaScript">JavaScript + CanvasRenderingContext2D</a></li>
+    </ul>
+    <div>Mode: <span id="mode"> </span></div>
+    <div>FPS: <span id="fps"> </span></div>
+    <div>
+      Number of cirlces:
+      <input
+        id="circles-count"
+        type="number"
+        min="0"
+        value="100"
+        style="font-family: monospace;"
+      />
+    </div>
+    <canvas width="672" height="672" style="width: 100%;"></canvas>
+    <a href="https://github.com/mizkichan/rust-canvas-example"
+      >https://github.com/mizkichan/rust-canvas-example</a
+    >
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
+<!-- vim: set ts=2 sw=2 et: -->
