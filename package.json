@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "start": "webpack-dev-server -d",
+    "build": "webpack -p"
+  },
+  "devDependencies": {
+    "@wasm-tool/wasm-pack-plugin": "^1.0.1",
+    "copy-webpack-plugin": "^5.0.5",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>rust-canvas-example</title>
+    <style>
+      body {
+        font-family: monospace;
+        max-width: 8in;
+        margin: auto;
+      }
+      canvas {
+        display: block;
+        width: 100%;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>rust-canvas-example</h1>
+    <select id="mode">
+      <option value="js-arcfill">JavaScript / arc() + fill()</option>
+      <option value="rust-arcfill">Rust / arc() + fill()</option>
+      <option value="js-putimagedata">JavaScript / putImageData()</option>
+      <option value="rust-putimagedata">Rust / putImageData()</option>
+    </select>
+    FPS: <span id="fps"></span>
+    <canvas id="canvas" width="1000" height="1000"></canvas>
+    <a href="https://github.com/mizkichan/rust-canvas-example">
+      https://github.com/mizkichan/rust-canvas-example
+    </a>
+    <script src="main.js"></script>
+  </body>
+</html>
+<!-- vim: set ts=2 sw=2 et: -->
