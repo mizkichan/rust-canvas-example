@@ -19,10 +19,10 @@
   <body>
     <h1>rust-canvas-example</h1>
     <select id="mode">
-      <option value="js-arcfill">JavaScript / arc() + fill()</option>
+      <option value="">PAUSE</option>
+      <option value="js-arcfill" selected>JavaScript / arc() + fill()</option>
       <option value="rust-arcfill">Rust / arc() + fill()</option>
-      <option value="js-putimagedata">JavaScript / putImageData()</option>
-      <option value="rust-putimagedata">Rust / putImageData()</option>
+      <option value="rust-imagedata">Rust / putImageData()</option>
     </select>
     FPS: <span id="fps"></span>
     <canvas id="canvas" width="1000" height="1000"></canvas>
