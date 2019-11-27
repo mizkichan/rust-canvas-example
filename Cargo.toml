@@ -9,6 +9,9 @@ crate-type = ["cdylib"]
 
 [dependencies]
 console_error_panic_hook = "0.1"
+imageproc = "0.19"
+palette = "0.5"
+rand = "0.7"
 wasm-bindgen = "0.2"
 
 [dependencies.getrandom]
@@ -17,16 +20,15 @@ features = [
   "wasm-bindgen"
 ]
 
-[dependencies.rand]
-version = "0.7"
-features = [
-  "getrandom"
-]
+[dependencies.image]
+version = "0.22"
+default-features = false
 
 [dependencies.web-sys]
 version = "0.3"
 features = [
   "CanvasRenderingContext2d",
+  "ImageData"
 ]
 
 # vim: set ts=2 sw=2 et:

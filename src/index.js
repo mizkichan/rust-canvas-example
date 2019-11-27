@@ -25,7 +25,10 @@ const start = (now = null) => {
   requestId = window.requestAnimationFrame(start);
 };
 
-const stop = () => window.cancelAnimationFrame(requestId);
+const stop = () => {
+  window.cancelAnimationFrame(requestId);
+  context.clearRect(0, 0, canvas.width, canvas.height);
+};
 
 const setFps = value => (fps.textContent = value);
 
@@ -36,13 +39,23 @@ modeSelect.onchange = event => {
   const mode = event.target.value;
   switch (mode) {
     case "js-arcfill":
-      import("./js-arcfill.js").then(({ Renderer }) => {
+      import("./arcfill.js").then(({ Renderer }) => {
         renderer = new Renderer(CONFIG);
       });
       break;
     case "rust-arcfill":
       import("../pkg/index.js").then(({ ArcFillRenderer }) => {
         renderer = new ArcFillRenderer(
+          CONFIG.width,
+          CONFIG.height,
+          CONFIG.radius,
+          CONFIG.numberOfCircles
+        );
+      });
+      break;
+    case "rust-imagedata":
+      import("../pkg/index.js").then(({ ImageDataRenderer }) => {
+        renderer = new ImageDataRenderer(
           CONFIG.width,
           CONFIG.height,
           CONFIG.radius,
@@ -57,7 +70,7 @@ modeSelect.onchange = event => {
   start();
 };
 
-import("./js-arcfill.js").then(({ Renderer }) => {
+import("./arcfill.js").then(({ Renderer }) => {
   renderer = new Renderer(CONFIG);
   start();
 });
